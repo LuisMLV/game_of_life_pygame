@@ -29,6 +29,7 @@ cellsize = 10 #Tamaño que tendrá la célula en la cuadrícula donde se llevar�
 cellwidth = int(screen_width/cellsize) #Ancho de la célula.
 cellheight = int(grid_height/cellsize) #Alto de la célula.
 
+
 #Aquí los colores que se usarán para la animación en formato RGB:
 
 white = (255, 255, 255)
@@ -42,7 +43,8 @@ blue = (0,0, 255)
 
 def grid():
 
-# En la cuadrícula estableceré un sistema cartesiano para poder así asignar y localizar las células vivas y muertas
+# En la cuadrícula estableceré un sistema cartesiano para poder así asignar y localizar las células vivas y muertas.
+
     for x in range(0, screen_width, cellsize):
         pygame.draw.line(screen, grey, (x,0), (x, grid_height))
     for y in range(0, grid_height, cellsize):
@@ -50,7 +52,6 @@ def grid():
 
     pygame.draw.line(screen, white, (0,grid_height),(screen_width, grid_height), width=2) #Establezco  al final de la cuadrícula una línea que separá a esta de una
                                                                                           #zona que reservaré para incluir una determinada métrica.
-
 
 
 #Posteriormente defino una función que generará en la cuadrícula una matriz con distribución aleatoria de células vivas y muertas:
@@ -149,8 +150,6 @@ def generation_metric(generation):
 
     screen.blit(gen_text, (20, 630))
     pygame.display.update()
-
-
 
 
 #Creo la función main(), que ejecutará todo el código anterior más ciertos aspectos a configurar de pygame:
